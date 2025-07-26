@@ -1,16 +1,20 @@
 class College {
   static collegeName;
-  cgpa;
 
   constructor(cgpa = 0.0) {
     this.cgpa = cgpa;
   }
 
-  static studentDetails() {
-    console.log(collegeName);
-    console.log(cgpa);
+  studentDetails() {
+    console.log(this.collegeName);
+    console.log(this.cgpa);
   }
 }
 
 College.collegeName = "SMVDU";
 let rishabh = new College(5.6);
+rishabh.collegeName = "VIT";
+rishabh.studentDetails();
+
+let pranjal = new College(6.4);
+pranjal.studentDetails();
