@@ -7,7 +7,7 @@ var sortByBits = function (arr) {
 
     if (countx === county) {
       return x - y;
-    }
+    } 
     return countx - county;
   });
 
@@ -17,7 +17,7 @@ var sortByBits = function (arr) {
 function count(num) {
   let count = 0;
 
-  while (num > 0) {
+  while(num > 0){
     count += num & 1;
     num >>= 1;
   }
