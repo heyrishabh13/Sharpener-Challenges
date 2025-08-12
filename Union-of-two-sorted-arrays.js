@@ -1,53 +1,45 @@
 function findUnion(a, b) {
-  // code here
+  let arr = [];
   let i = 0;
   let j = 0;
 
-  let result = [];
-  let set = new Set();
-
   while (i < a.length && j < b.length) {
-    if (!set.has(a[i]) && !set.has(b[j])) {
-      if (a[i] < b[j]) {
-        result.push(a[i]);
-        set.add(a[i]);
-        i++;
-      } else if (b[j] < a[i]) {
-        result.push(b[j]);
-        set.add(b[j]);
-        j++;
-      } else {
-        set.add(a[i]);
-        result.push(a[i++]);
-        j++;
-      }
-    } else if (!set.has(a[i]) && set.has(b[j])) {
-      j++;
-    } else if (set.has(a[i]) && !set.has(b[j])) {
+    let x = a[i];
+    let y = b[j];
+
+    if (i > 0 && i < a.length && a[i] == a[i - 1]) {
       i++;
+      continue;
+    }
+
+    if (j > 0 && j < b.length && b[j] == b[j - 1]) {
+      j++;
+      continue;
+    }
+
+    if (x < y) {
+      arr.push(x);
+      i++;
+    } else if (x > y) {
+      arr.push(y);
+      j++;
     } else {
+      arr.push(x);
       i++;
       j++;
     }
   }
-
   while (i < a.length) {
-    if (!set.has(a[i])) {
-      result.push(a[i]);
-      set.add(a[i++]);
-    }
+    if (i == 0 || a[i] !== a[i - 1]) arr.push(a[i]);
+    i++;
   }
   while (j < b.length) {
-    if (!set.has(b[j])) {
-      result.push(b[j]);
-      set.add(b[j]);
-      j++;
-    }
+    if (j == 0 || b[j] !== b[j - 1]) arr.push(b[j]);
+    j++;
   }
-  //   console.log(set);
-  return result;
-}
 
+  return arr;
+}
 const a = [1, 2, 3, 4, 5],
   b = [1, 2, 3, 6, 7];
 console.log(findUnion(a, b));
