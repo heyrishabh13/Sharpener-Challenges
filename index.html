@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- Write your code below -->
+    <h1>Book Appointment</h1>
+    <form id="form" onsubmit="handleSubmit(event)">
+      <label for="username">Name:</label>
+      <input type="text" id="username" name="u_name" /><br /><br />
+      <label for="userage">Age:</label>
+      <input type="number" id="userage" name="u_age" /><br /><br />
+      <label for="useremail">Email:</label>
+      <input type="email" id="useremail" name="u_mail" />
+      <label for="usernumber">Phone Number:</label>
+      <input type="tel" id="usernumber" name="u_number" /><br /><br />
+      <label for="userdate">Date:</label>
+      <input type="date" id="userdate" name="u_date" /><br /><br />
+      <label for="usertime">Time:</label>
+      <input type="time" id="usertime" name="u_time" /><br /><br />
+      <label>
+        <button type="submit">Submit</button>
+      </label>
+      <label>
+        <button type="reset">Reset</button>
+      </label>
+    </form>
+  </body>
+
+  <script>
+    // Write your code below:
+    function handleSubmit(event) {
+      event.preventDefault();
+      // event.target.value;
+      console.log(event.target.u_name.value);
+      console.log(event.target.u_age.value);
+      console.log(event.target.u_mail.value);
+      console.log(event.target.u_number.value);
+      console.log(target.u_date.value);
+      console.log(event.target.u_time.value);
+    }
+
+    // module.exports = handleSubmit;
+  </script>
+</html>
